@@ -3,9 +3,11 @@ package fr.isen.rouvier.androidrestaurant
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.rouvier.androidrestaurant.databinding.ActivityHomeBinding
+
 
 
 
@@ -30,7 +32,30 @@ class HomeActivity : AppCompatActivity() {
             goToCategory("Desserts")
         }
 
+        binding.btnBLE.setOnClickListener {
+            val myIntent = Intent(this, BLEActivity::class.java)
+            startActivity(myIntent)
+        }
 
+        binding.btnCart.setOnClickListener {
+            val myIntent = Intent(this, CartActivity::class.java)
+            startActivity(myIntent)
+        }
+
+        /*fun onCreateOptionsMenu(menu: Menu) {
+            getMenuInflater().inflate(R.menu.main_menu, menu)
+        }*/
+
+
+    }
+
+    override fun onStop(){
+        super.onStop()
+        Log.d("HomeActivity","L'activitée est arrêtée")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("HomeActivity","L'activitée est dértuite")
     }
 
     private fun goToCategory(category: String) {

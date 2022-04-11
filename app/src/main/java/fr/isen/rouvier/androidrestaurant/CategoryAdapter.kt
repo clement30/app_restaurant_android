@@ -10,11 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import fr.isen.rouvier.androidrestaurant.model.Item
 
-class CategoryAdapter(private val  items: List<Item>, val mListener: (Item) -> Unit)  : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryAdapter(private val  items: ArrayList<Item>, val mListener: (Item) -> Unit)  : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.cell_category, parent, false)
+        val view =  LayoutInflater.from(parent.context).inflate(R.layout.cell_category, parent, false)
 
         return ViewHolder(view)
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3E6D1"
+    android:background="@color/white"
     tools:context=".HomeActivity">
 
     <Button
@@ -12,8 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="#2196F3"
-        android:text="Déserts"
+        android:backgroundTint="@color/vert"
+        android:textStyle="bold"
+        android:fontFamily="@font/satisfy"
+        android:text="@string/deserts"
+        android:textColor="@color/gold"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,8 +28,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="#E91E63"
-        android:text=" Plats "
+        android:backgroundTint="@color/white"
+        android:textStyle="bold"
+        android:fontFamily="@font/satisfy"
+        android:textColor="@color/gold"
+        android:textSize="20dp"
+        android:text="@string/plats"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonEntrees" />
@@ -35,20 +43,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="#2196F3"
-        android:text="Entrées"
+        android:backgroundTint="@color/rouge"
+        android:textColor="@color/gold"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/satisfy"
+        android:text="@string/entrees"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="183dp"
+        android:layout_width="match_parent"
         android:layout_height="227dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoresto" />
+
+    <Button
+        android:id="@+id/btnBLE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Bluetooth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDeserts" />
+
+    <Button
+        android:id="@+id/btnCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Panier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBLE" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

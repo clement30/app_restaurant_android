@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -44,6 +45,7 @@ class CategoryActivity : AppCompatActivity() {
                         Log.d("API", strResp)
 
                         val items = dataResult.data.firstOrNull { it.name_fr == category }?.items ?: arrayListOf()
+                        binding.categoryList.layoutManager = LinearLayoutManager(this)
                         binding.categoryList.adapter = CategoryAdapter(items) {
                             val intent = Intent(this@CategoryActivity, DetailActivity::class.java)
                             intent.putExtra(ITEM_KEY, it)
@@ -58,7 +60,4 @@ class CategoryActivity : AppCompatActivity() {
     companion object{
         val ITEM_KEY = "item"
     }
-
-
-
 }
